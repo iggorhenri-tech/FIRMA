@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int opcao;
+
+        do {
+            System.out.println("\n\tSISTEMA DE CADASTRO DE CLIENTES");
+            System.out.println("\n1 - Cadastrar Pessoa Física");
+            System.out.println("\n2 - Cadastrar Pessoa Jurídica");
+            System.out.println("\n3 - Sair");
+            System.out.println("\n Escolha uma opção: ");
+
+            opcao = Integer.parseInt(sc.nextLine());
+
+            switch (opcao) {
+
+                case 1:
+                    System.out.print("\n  Quantas Pessoas Físicas deseja cadastrar? ");
+                    int qtdPF = Integer.parseInt(sc.nextLine());
+
+                    for (int i = 0; i < qtdPF; i++) {
+                        System.out.println("\n  >> Cadastrando Pessoa Física " + (i + 1) + " de " + qtdPF);
+
+                        System.out.print("  Nome            : "); String nome  = sc.nextLine();
+                        System.out.print("  Telefone        : "); String tel   = sc.nextLine();
+                        System.out.print("  E-mail          : "); String email = sc.nextLine();
+                        System.out.print("  CPF             : "); String cpf   = sc.nextLine();
+                        System.out.print("  Data Nascimento : "); String dn    = sc.nextLine();
+
+                        Pessoafisica pf = new Pessoafisica(nome, tel, email, cpf, dn);
+
+                        System.out.println("\n  -- Dados cadastrados --");
+                        pf.exibirDados();
+                    }
+                    break;
+
+                case 2:
+                    System.out.print("\n  Quantas Pessoas Jurídicas deseja cadastrar? ");
+                    int qtdPJ = Integer.parseInt(sc.nextLine());
+
+                    for (int i = 0; i < qtdPJ; i++) {
+                        System.out.println("\n  >> Cadastrando Pessoa Jurídica " + (i + 1) + " de " + qtdPJ);
+
+                        System.out.print("  Nome Fantasia : "); String nome  = sc.nextLine();
+                        System.out.print("  Telefone      : "); String tel   = sc.nextLine();
+                        System.out.print("  E-mail        : "); String email = sc.nextLine();
+                        System.out.print("  CNPJ          : "); String cnpj  = sc.nextLine();
+                        System.out.print("  Razão Social  : "); String rs    = sc.nextLine();
+
+                        Pessoajuridica pj = new Pessoajuridica(nome, tel, email, cnpj, rs);
+
+                        System.out.println("\n  -- Dados cadastrados --");
+                        pj.exibirDados();
+                    }
+                    break;
+
+                case 0:
+                    System.out.println("\n  Encerrando sistema. Até logo!");
+                    break;
+
+                default:
+                    System.out.println("\n  Opção inválida! Tente novamente.");
+            }
+
+        } while (opcao != 0);
+
+        sc.close();
+    }
+}
