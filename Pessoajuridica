@@ -1,0 +1,34 @@
+public class Pessoajuridica extends Pessoa {
+
+    private String CNPJ;
+    private String razaosocial;
+
+    public Pessoajuridica(String nome, String telefone, String email, String CNPJ, String razaosocial){
+        super (nome, telefone, email);
+        this.CNPJ = CNPJ;
+        this.razaosocial = razaosocial;
+    }
+
+    public String getCNPJ() {
+        return CNPJ;
+    }
+
+    public void setCNPJ(String CNPJ) {
+        this.CNPJ = CNPJ;
+    }
+
+    public String getrazaosocial() {
+        return razaosocial;
+    }
+
+    public void setrazaosocial(String razaosocial) {
+        this.razaosocial = razaosocial;
+    }
+    @Override
+    public void exibirDados() {
+        System.out.println("\n  [PESSOA JURIDICA]");
+        super.exibirDadosGerais();
+        System.out.println("  CNPJ             : " + CNPJ);
+        System.out.println("  Razão Social : " + razaosocial);
+    }
+}
