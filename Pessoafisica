@@ -3,7 +3,7 @@ public class Pessoafisica extends Pessoa{
     private String CPF;
     private String datadeNascimento;
 
-    public Pessoafisica(String nome, String telefone, String email, String CPF, String dataNascimento){
+    public Pessoafisica(String nome, String telefone, String email, String CPF, String datadeNascimento){
         super (nome, telefone, email);
         this.CPF = CPF;
         this.datadeNascimento = datadeNascimento;
