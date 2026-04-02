@@ -1,0 +1,34 @@
+public class Pessoafisica extends Pessoa{
+
+    private String CPF;
+    private String datadeNascimento;
+
+    public Pessoafisica(String nome, String telefone, String email, String CPF, String dataNascimento){
+        super (nome, telefone, email);
+        this.CPF = CPF;
+        this.datadeNascimento = datadeNascimento;
+    }
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
+    public String getDatadeNascimento() {
+        return datadeNascimento;
+    }
+
+    public void setDatadeNascimento(String datadeNascimento) {
+        this.datadeNascimento = datadeNascimento;
+    }
+    @Override
+    public void exibirDados() {
+        System.out.println("\n  [PESSOA FÍSICA]");
+        super.exibirDadosGerais();
+        System.out.println("  CPF             : " + CPF);
+        System.out.println("  Data Nascimento : " + datadeNascimento);
+    }
+}
